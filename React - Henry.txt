@@ -4,6 +4,9 @@ Crear aplicación React con Redux
 
 npx create-react-app repaso --template redux
 
+Instalar React-Router-Dom en una aplicación nueva
+npm i react-router-dom
+
 Rick And Morty
 Corte de video para nuevo repo
 Modo de Corte: En partes según los códigos de tiempo
@@ -49,7 +52,7 @@ background-color: buttonface;
 color: buttontext;
 
 
-Aram872009rdz
+
 
 export function Products({products}) {
    return (

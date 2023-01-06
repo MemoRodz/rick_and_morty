@@ -1,13 +1,38 @@
 import styles from './App.module.css';
-//import Card from './components/Card.jsx'
-import Cards from './components/Cards.jsx'
-import NavBar from './components/NavBar.jsx'
-import characters from './data.js'
+import { useState } from 'react';
+import Cards from './components/Cards.jsx';
+import NavBar from './components/NavBar.jsx';
+import Login from './components/Login.jsx';
+import About from './components/About.jsx';
+import Detail from './components/Detail';
+import { Routes, Route } from 'react-router-dom';
+
 
 function App() {
 
-  function onSearch(id){
-    alert(id);
+  const [characters, setCharacters] = useState([]);
+
+  function onSearch(id) {
+    fetch(`https://rickandmortyapi.com/api/character/${id}`)
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.name) {
+          if (characters.find((e) => e.id === data.id)) {
+            alert('El personaje ya existe.')
+          }
+          else {
+            setCharacters((oldChars) => [...oldChars, data]);
+          }
+        } else {
+          window.alert('No hay personajes con ese ID');
+        }
+      });
+  }
+
+  function onClose(id) {
+    setCharacters((data) => {
+      return data.filter((e) => e.id !== id)
+    })
   }
 
   return (
@@ -18,13 +43,21 @@ function App() {
         />
       </div>
       <hr />
-      <div>
-        <Cards
-          characters={characters}
-        />
-      </div>
+      <Routes>
+        <Route path="/" element={<Login />}></Route>
+        <Route path="/home" element={<Cards characters={characters} onClose={onClose} />}></Route>
+        <Route path="/about" element={<About />}></Route>
+        <Route path="/detail/:detailId" element={<Detail />}></Route>
+      </Routes>
     </div>
   )
 }
 
 export default App;
+
+
+/*
+"/home": esta será la ruta del Home (vista principal/general).
+"/detail/:detailId": en esta ruta encontraremos información más detallada sobre el personaje en particular.
+"/about": en esta ruta colocarás tu nombre y describirás de qué trata la aplicación Rick & Morty.
+*/

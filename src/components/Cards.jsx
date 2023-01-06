@@ -14,7 +14,7 @@ export default function Cards(props) {
                      //gender={c.gender}
                      //image={c.image}
                      {...c}
-                     onClose={() => window.alert('Emulamos que se cierra la card')}
+                     onClose={()=>props.onClose(c.id)}
                   />
                )
             })

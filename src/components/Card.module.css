@@ -5,10 +5,12 @@
     padding: 10px;
 }
 img{
-    width: 90%;
+    width: 100%;
+    border-radius: 10px;
 }
 
 .txt{
     text-align: center;
     color: aliceblue;
+    text-decoration: none;
 }
