@@ -1,0 +1,196 @@
+React - Henry
+
+Crear aplicación React con Redux
+
+npx create-react-app repaso --template redux
+
+Rick And Morty
+Corte de video para nuevo repo
+Modo de Corte: En partes según los códigos de tiempo
+00:42:25-00:46:30  ==>HH:MM:ss-HH:MM:ss
+
+git remote add origin https://github.com/MemoRodz/rick_and_morty.git
+
+      <div>
+        <Card
+          name={Rick.name}
+          species={Rick.species}
+          gender={Rick.gender}
+          image={Rick.image}
+          onClose={() => window.alert('Emulamos que se cierra la card')}
+        />
+      </div>
+      <hr />
+
+
+            <div>
+        <SearchBar
+          onSearch={(characterID) => window.alert(characterID)}
+        />
+      </div>
+
+      .card{
+    border: 8px solid rgba(239,191,224,0.801);
+    width: 22%;
+}
+
+img{
+    width: 100%;
+}
+
+    border-radius: 8px;
+    padding: 8px;
+    margin: 2px;
+    background-color: rgba(12, 165, 12, 0.252);
+
+https://images.alphacoders.com/876/876589.jpg
+
+background-color: buttonface;
+color: buttontext;
+
+
+Aram872009rdz
+
+export function Products({products}) {
+   return (
+      
+   )
+}
+{
+   return (
+      <>
+         <div className='productsBg'>
+            <h1 className='productsTl'>HENRY MARKET</h1>
+
+            <div className='productsList'>
+               
+            </div>
+         </div>
+      </>
+   );
+}
+
+import { connect } from 'react-redux';
+import React from 'react';
+import './products.css';
+//El componente Card lo exportamos haciendo destructuring para poder testearlo
+import Card, { mapDispatchToProps } from '../Card/Card';
+import { getStoreName } from '../../redux/actions/actions';
+
+export function Products({ list, getStoreName, storeName }) {
+   React.useEffect(() => {
+      getStoreName()
+   }, [])
+
+   return (
+      <div>
+         <div className='productsBg'>
+            <h1 className='productsTl'>{storeName}</h1>
+            <div className='productsList'>
+               {
+                  list.map(product => {
+                     return (
+                        <Card
+                           name={product.name}
+                           price={product.price}
+                           key={product.id} />
+                     )
+                  })
+               }
+            </div>
+         </div>
+      </div>
+   );
+};
+
+export function mapStateToProps(state) {
+   return {
+      products: state.list,
+      storeName: state.storeName
+   };
+};
+
+export function mapDispatchToProps(dispatch) {
+   return {
+      getStoreName: () => { dispatch(getStoreName()) }
+   }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Products);
+
+
+import { connect } from 'react-redux';
+import React from 'react';
+import './products.css';
+//El componente Card lo exportamos haciendo destructuring para poder testearlo
+// import Card from '../Card/Card'
+
+export function Products() {
+   return (
+      <>
+         <div className='productsBg'>
+            <h1 className='productsTl'>HENRY MARKET</h1>
+
+            <div className='productsList'>
+               {/* ¡Renderiza aquí todas tus cards! */}
+            </div>
+         </div>
+      </>
+   );
+}
+
+export function mapStateToProps() {}
+
+export default connect(mapStateToProps, null)(Products);
+
+
+import { connect } from 'react-redux';
+import React from 'react';
+import './products.css';
+//El componente Card lo exportamos haciendo destructuring para poder testearlo
+import Card from '../Card/Card'
+import {getStoreName } from '../../redux/actions/actions'
+
+export function Products(list, getStoreName, storeName) {
+   React.useEffect(()=>{
+      getStoreName()
+   }, [])
+
+   return (
+      <div>
+         <div className='productsBg'>
+            <h1 className='productsTl'>{storeName}</h1>
+
+            <div className='productsList'>
+               {
+                  list.map(product=>{
+                     return(
+                        <Card name={product.name} price={product.price} key={product.id} />
+                     )
+                  })
+               }
+            </div>
+         </div>
+      </div>
+   );
+}
+
+export function mapStateToProps(state) {
+   return{
+      list: state.list,
+      storeName: state.storeName
+   }
+}
+
+export function mapDispatchToProps(dispatch){
+   return{
+      getStoreName:()=>{dispatch(getStoreName())}
+   }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Products);
+
+
+               list.map((product, index) => {
+                  return <Card name={product.name} price={product.price} id={product.id} key={index} />
+               }

@@ -1,0 +1,14 @@
+.card{
+    border: 4px solid rgba(117, 107, 235, 0.587);
+    width: 22%;
+    border-radius: 20px;
+    padding: 10px;
+}
+img{
+    width: 90%;
+}
+
+.txt{
+    text-align: center;
+    color: aliceblue;
+}

@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  padding: 10px;
+  background-color: rgba(51, 52, 57, 0.282);
 }
 
 .App-logo {
@@ -35,4 +37,13 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+h2{
+  color: rgba(rgba(31, 31, 34, 0.862), green, blue, alpha);
+}
+
+.container{
+  border: 2px solid rgba(13,19,0.801);
+  padding: 3px;
 }

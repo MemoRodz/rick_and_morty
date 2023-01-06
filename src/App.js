@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import styles from './App.module.css';
+//import Card from './components/Card.jsx'
+import Cards from './components/Cards.jsx'
+import NavBar from './components/NavBar.jsx'
+import characters from './data.js'
 
 function App() {
+
+  function onSearch(id){
+    alert(id);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={styles.App} style={{ padding: '25px' }}>
+      <div className={styles.container}>
+        <NavBar
+          onSearch={onSearch}
+        />
+      </div>
+      <hr />
+      <div>
+        <Cards
+          characters={characters}
+        />
+      </div>
     </div>
-  );
+  )
 }
 
 export default App;
