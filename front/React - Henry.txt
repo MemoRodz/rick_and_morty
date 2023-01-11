@@ -7,6 +7,176 @@ npx create-react-app repaso --template redux
 Instalar React-Router-Dom en una aplicación nueva
 npm i react-router-dom
 
+Instalación de Nodemon a nivel global
+npm install -g nodemon
+
+
+const process = require("process");
+const commands = require("./commands/index.js");
+
+function bash() {
+const done = function(data){
+  process.stdout.write(data);
+  process.stdout.write('\nprompt > ');
+}
+
+  process.stdout.write('prompt >');
+
+  process.stdin.on('data', data => {
+    let args = data.toString().trim().split(' ');
+    let cmd = args.shift();
+    if(commands[cmd]){
+      commands[cmd(args, done)];
+    } else{
+      done('command not found: %s', cmd);
+    }
+    process.stdout.write('\nprompt > ');
+  });
+}
+
+function print(output) {
+  process.stdout.write(output);
+  process.stdout.write('\nprompt > ');
+}
+
+const fs = require("fs");
+const utils = require("../utils/request");
+const process = require("process");
+
+function pwd(args, done) {
+    done(process.cwd());
+    process.stdout.write('\n prompt > ');
+}
+
+function date(args, print) {
+    print(Date());
+    process.stdout.write('\n prompt > ');
+}
+
+function echo(args, done) {
+    done(args.join(""));
+    process.stdout.write('\n prompt > ');
+}
+
+function ls(args, done) {
+    fs.readdir('.', function(err, data){
+        if(err) throw err;
+        done(data.join("\n"));
+        process.stdout.write('\n prompt > ');
+    });
+}
+
+function cat(args, done) {
+    fs.readFile(args[0], 'utf8', function(err, data){
+        if(err) throw err;
+        done(data);
+        process.stdout.write('\n prompt > ');
+    });
+}
+
+function head() {}
+
+function tail() {}
+
+function curl() {}
+
+module.exports = { pwd, date, echo, ls, cat, head, tail, curl };
+
+
+<Route path='/home' element={} />
+<Cards characters={characters} onClose={onClose} />
+
+
+            <FutbolistaCard
+               id={futbolistas.id}
+               name={futbolistas.name}
+               pais={futbolistas.pais}
+               imagen={futbolistas.imagen}
+            />
+
+            <FutbolistaCard
+            id={futbolistas.id}
+            name={futbolistas.name}
+            pais={futbolistas.pais}
+            imagen={futbolistas.imagen}
+            />
+
+            {futbolistas && futbolistas.map((ft) => {
+               return {
+                  <FutbolistaCard
+                  id={futbolistas.id}
+                  name={futbolistas.name}
+                  pais={futbolistas.pais}
+                  imagen={futbolistas.imagen}
+                  />
+               }
+            })}
+
+                  const [error, setError] = React.useState("");
+
+      const [jugador, setJugador]= React.useState({
+            name: '',
+            pais: '',
+            posición: '',
+            descripción: '',
+            numeroCamiseta: 0,
+            imagen: '',
+            nacimiento: ''
+      });
+
+      function handleInputChange(e) {
+            setJugador({
+                  ...jugador,
+                  [e.target.name]: e.target.value
+            })
+      }
+
+
+       onChange={handleInputChange(e)}
+
+             function validate(inputs){
+            if(!inputs.name.length > 30){
+                  setError("Nombre u Pais demasiado largo");
+            } else if(inputs.pais.length > 30){
+                  setError("Nombre u Pais demasiado largo");
+            } else if(inputs.numeroCamiseta < 0){
+                  setError("El numero de camiseta tiene que ser mayor a 0");
+            }
+      };
+
+validate(e).length? (e) => handleSubmit(e): null
+
+export const getAllFutbolistas = () => {
+    return async function (dispatch) {
+        try {
+            let response = await axios.get('http://localhost:3001/futbolistas');
+            return dispatch(
+                {
+                    type:GET_ALL_FUTBOLISTAS,
+                    payload:response.data
+                }
+            );
+        } catch (error) {
+            console.log(error);
+        }
+    };
+};
+
+Use el codigo que dio el profe en clase para hacer la petición creo que era el de React-redux cuando hacian la "Store-Henry"
+dentro de sus funciones 
+export const getAllFutbolistas = () => {
+return async function (dispatch) {
+        try {
+          let response = await axios.get("http://localhost:3001/futbolistas");
+          return dispatch({
+            type: GET_ALL_FUTBOLISTAS,
+            payload: response.data,
+          });
+        } catch (error) {
+          console.log(error);
+        }
+      };
+
 Rick And Morty
 Corte de video para nuevo repo
 Modo de Corte: En partes según los códigos de tiempo

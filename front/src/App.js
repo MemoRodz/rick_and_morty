@@ -1,15 +1,40 @@
 import styles from './App.module.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Cards from './components/Cards.jsx';
 import NavBar from './components/NavBar.jsx';
-import Login from './components/Login.jsx';
 import About from './components/About.jsx';
 import Detail from './components/Detail';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
+import Form from './components/Form.jsx';
 
 
 function App() {
+  
+  const [access, setAccess] = useState(false);
+  const username = "33b@soyHenry.com";
+  const password = "@Model101";
+  const navigate = useNavigate();
 
+  function login(userData) {
+    if (userData.password === password && userData.username === username) {
+      setAccess(true);
+      navigate("/home");
+    } else {
+      alert("Usuario y/o password incorrectos.")
+    }
+  }
+
+  function logout() {
+      setAccess(false);
+      navigate("/home");
+
+  }
+
+  useEffect(() => {
+    !access && navigate('/');
+  }, [access]);
+
+  const location = useLocation();
   const [characters, setCharacters] = useState([]);
 
   function onSearch(id) {
@@ -36,15 +61,16 @@ function App() {
   }
 
   return (
-    <div className={styles.App} style={{ padding: '25px' }}>
+    <div className={styles.App}>
       <div className={styles.container}>
-        <NavBar
-          onSearch={onSearch}
-        />
+        <div>
+          {location.pathname === "/" ? null : <NavBar logout={logout}
+            onSearch={onSearch}
+          />}
+        </div>
       </div>
-      <hr />
       <Routes>
-        <Route path="/" element={<Login />}></Route>
+        <Route path="/" element={<Form login={login}/>}></Route>
         <Route path="/home" element={<Cards characters={characters} onClose={onClose} />}></Route>
         <Route path="/about" element={<About />}></Route>
         <Route path="/detail/:detailId" element={<Detail />}></Route>
