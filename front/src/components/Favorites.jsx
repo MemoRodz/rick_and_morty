@@ -51,6 +51,7 @@ export default function Favorites(props) {
             <button onClick={() => dispatch(reset())}>RESET</button>
           </div>
         </div>
+        {console.log(myFavorites)}
         {myFavorites?.map((c) => {
           return (
             <Card

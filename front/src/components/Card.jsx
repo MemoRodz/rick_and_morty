@@ -1,6 +1,6 @@
 import styles from "./Card.module.css";
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addFavorites, deleteFavorites } from "../Redux/actions";
 

@@ -7,7 +7,7 @@ const getFav = function (req, res) {
 
 const postFav = function (req, res) {
     fav.push(req.body);
-    console.log('post Favoritos:', fav);
+    //console.log('post Favoritos:', fav);
     res.status(200).end(JSON.stringify(req.body));
 };
 
@@ -16,7 +16,7 @@ const deleteFavId = function (req, res) {
     const character = fav.find(ch => ch.id === Number(id))
     if (character) {
         fav = fav.filter(element => element.id !== Number(id))
-        console.log('Delete Favoritos: ', fav);
+        //console.log('Delete Favoritos: ', fav);
         res.status(200).end(JSON.stringify(character));
     } else {
         res.status(400).end('This character doesn\'t exist in Favorites');
