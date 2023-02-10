@@ -10,6 +10,27 @@ npm i react-router-dom
 Instalación de Nodemon a nivel global
 npm install -g nodemon
 
+Para iniciar un proyecto y crear el package.json
+  npm init
+y después 
+  npm install
+
+const  generateRandomString = (num) => {
+        const characters ='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        console.log(characters.length);
+        let result1= Math.random().toString(36).substring(0,num);       
+
+        return result1;
+    }
+
+let  generateRandomString = (num) => {
+        
+        let result1= Math.floor(Math.random()).toString(36).substring(0,num);
+
+        return result1;
+    }
+
+console.log(generateRandomString(7));
 
 const process = require("process");
 const commands = require("./commands/index.js");

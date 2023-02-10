@@ -14,3 +14,28 @@ img{
     color: aliceblue;
     text-decoration: none;
 }
+
+.upbar_card{
+    display: flex;
+    justify-content: space-between;
+    padding: 2px;
+    border-radius: 3px;
+    margin: 1px;
+}
+
+.linki{
+    text-decoration-line: none;
+    color: rgb(18, 28, 23);
+}
+
+.bttn{
+    background-color: rgb(173, 193, 187);
+    border-radius: 2px;
+    border: solid 1.5px;
+    border-color: rgb(187, 236, 217);
+    cursor: pointer;
+    color: rgb(88, 41, 16);
+    font-weight: bold;
+    font-size: 60%;
+    
+}

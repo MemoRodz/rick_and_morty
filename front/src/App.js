@@ -1,11 +1,11 @@
+import React, { useState, useEffect } from 'react';
 import styles from './App.module.css';
-import { useState, useEffect } from 'react';
 import Cards from './components/Cards.jsx';
 import NavBar from './components/NavBar.jsx';
 import About from './components/About.jsx';
 import Detail from './components/Detail';
-import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import Form from './components/Form.jsx';
+import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 
 
 function App() {
@@ -19,6 +19,7 @@ function App() {
     if (userData.password === password && userData.username === username) {
       setAccess(true);
       navigate("/home");
+      console.log('Entramos...')
     } else {
       alert("Usuario y/o password incorrectos.")
     }
@@ -26,12 +27,12 @@ function App() {
 
   function logout() {
       setAccess(false);
-      navigate("/home");
+      navigate("/");
 
   }
 
   useEffect(() => {
-    !access && navigate('/');
+    !access && navigate("/");
   }, [access]);
 
   const location = useLocation();

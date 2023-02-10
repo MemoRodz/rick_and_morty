@@ -1,5 +1,6 @@
 import Card from './Card';
 import styles from './Cards.module.css';
+import React from 'react';
 
 export default function Cards(props) {
    const { characters } = props;
@@ -16,7 +17,7 @@ export default function Cards(props) {
                      {...c}
                      onClose={()=>props.onClose(c.id)}
                   />
-               )
+               );
             })
          }
       </div>

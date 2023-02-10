@@ -3,7 +3,7 @@ import styles from './Detail.module.css';
 import { useParams } from 'react-router-dom';
 
 export default function Detail() {
-    const {detailId}=useParams();
+    const { detailId } = useParams();
     const [character, setCharacter] = useState({});
     useEffect(() => {
         fetch(`https://rickandmortyapi.com/api/character/${detailId}`)
@@ -27,12 +27,12 @@ export default function Detail() {
         <h1>{character.name}</h1>
         <h3>{character.status}</h3>
         <p>{character.species}</p>
-        <p>{character.gender}</p>
+        <p>{character.gender}</p>   {/*<p>{character.origin?.name}</p> */}
         <p>{character.origin?.name}</p>
       </div>
       <img className={styles.imgDetail} src={character.image} alt={character.name} />
     </div>
-  )
+  );
 }
 
 /*

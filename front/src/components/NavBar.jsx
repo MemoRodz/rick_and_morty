@@ -12,16 +12,26 @@ export default function NavBar(props) {
         </Link>
       </div>
       <div className={styles.bttn}>
-        <Link to='/about'>
-          <button>About</button>
+        <Link to="/favorites">
+          <button>Favorites</button>
+        </Link>
+      </div>
+      <div className={styles.bttn}>
+        <Link to="/portfolio">
+          <button>PORTFOLIO</button>
         </Link>
       </div>
       <div>
         <SearchBar onSearch={props.onSearch} />
       </div>
+      <div className={styles.bttn}>
+        <Link to='/about'>
+          <button>About</button>
+        </Link>
+      </div>
       <Link to='/'>
-      <button onClick={props.logout}>Logout</button>
-    </Link>
+        <button onClick={props.logout}>Logout</button>
+      </Link>
     </div>
   );
 }
