@@ -1,8 +1,9 @@
+import styles from './Portfolio.module.css'
 import React from 'react'
 
 export default function Portfolio() {
   return (
-    <div>
+    <div className={styles.txt}>
       <h1>Guillermo Rodríguez</h1>
       <p>
         Soy Egresado de la Licenciatura en Matemáticas Aplicadas y Computación por la Universidad Nacional Autónoma de México,

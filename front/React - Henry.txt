@@ -15,6 +15,66 @@ Para iniciar un proyecto y crear el package.json
 y después 
   npm install
 
+
+/*   En el return de Favoritos  */
+   const [isFav, setIsFav] = useState(false);
+   const dispatch = useDispatch();
+   const myFavorites = useSelector((s) => s.myFavorites);
+
+   function handleFavorite(ch) {
+      if (isFav) {
+         setIsFav(false);
+         dispatch(deleteFavorites(ch.id));
+      } else {
+         setIsFav(true);
+         dispatch(addFavorites(ch));
+      }
+   }
+
+   useEffect(() => {
+      myFavorites.forEach((ch) => {
+         if (ch.id === props.id) {
+            setIsFav(true);
+         }
+      });
+   }, [myFavorites]);
+
+<div className={styles.card}>
+         <div className={styles.upbar_card}>
+            {isFav ? (
+               <button onClick={() => handleFavorite(props)}>❤️</button>
+            ) : (
+               <button onClick={() => handleFavorite(props)}>🤍</button>
+            )}
+            <button className={styles.bttn} onClick={props.onClose}>
+               X
+            </button>
+         </div>
+         <div className={styles.txt}>
+            <Link className={styles.linki} to={`/detail/${props.id}`}>
+               <h2>{props.name}</h2>
+               <p>{props.species}</p>
+               <p>{props.gender}</p>
+               <img src={props.image} alt={props.image} />
+            </Link>
+         </div>
+</div>
+
+ucjN4vxJkCAIO
+ucjN4vxJkCAIO
+/* Revisando el PI    */
+
+// const getDyte= async(diet)=>{
+
+//     try{
+//         const DBInfo = await getDBInfo();
+//         const filtByName = DBInfo.filter(recipe => recipe.diets.includes(name));
+               
+//                 return filtByName;
+//     }
+// }
+
+
 const  generateRandomString = (num) => {
         const characters ='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
         console.log(characters.length);

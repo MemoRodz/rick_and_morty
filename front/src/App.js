@@ -5,6 +5,8 @@ import NavBar from './components/NavBar.jsx';
 import About from './components/About.jsx';
 import Detail from './components/Detail';
 import Form from './components/Form.jsx';
+import Favorites from "./components/Favorites.jsx";
+import Portfolio from "./components/Portfolio.jsx";
 import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 
 
@@ -73,6 +75,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Form login={login}/>}></Route>
         <Route path="/home" element={<Cards characters={characters} onClose={onClose} />}></Route>
+        <Route path="/favorites" element={<Favorites characters={characters} onClose={onClose}/>}></Route>
+        <Route path="/portfolio" element={<Portfolio />}></Route>
         <Route path="/about" element={<About />}></Route>
         <Route path="/detail/:detailId" element={<Detail />}></Route>
       </Routes>
