@@ -5,12 +5,18 @@ export default function SearchBar(props) {
   const [character, setCharacter] = useState("");
 
   function handleInput(event) {
-    setCharacter(event.target.value)
+    console.log("tecla presionada", event.target.value)
+    if(parseInt(event.target.value, 10)){
+      console.log("tecla presionada dentro", event.target.value)
+      setCharacter(event.target.value);
+    }
   }
 
   function handleKeyDown(event) {
     if(event.key === 'Enter'){
       onSearchOptimus();
+    } else if(isNaN(event.key)) {
+      return false;
     }
   }
 
