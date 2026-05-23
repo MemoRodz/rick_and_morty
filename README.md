@@ -43,7 +43,24 @@ npm start
 Guillermo Rodríguez  
 Full Stack Developer | Especialista en .NET, SQL Server, Node.Js y React
 
-📫 [LinkedIn](https://linkedin.com/in/guillermo-rodríguez-74b10039) | [GitHub](https://github.com/memorodz)
+<div align="center">
+<a href="https://github.com/memorodz" target="_blank">
+<img src="https://img.shields.io/badge/github-%2324292e.svg?&style=for-the-badge&logo=github&logoColor=white" alt="github" style="margin-bottom: 5px;" />
+</a>
+<a href="https://twitter.com/memosrdz" target="_blank">
+<img src="https://img.shields.io/badge/twitter-%2300acee.svg?&style=for-the-badge&logo=twitter&logoColor=white" alt="twitter" style="margin-bottom: 5px;" />
+</a>
+<a href="mailto:gmo.rodriguez@gmail.com" target="_blank">
+<img src="http://drive.google.com/uc?export=view&id=1AXnSOxIctvBK9LesZcBWBWHyCvMCuaJy" alt=Email style="margin-bottom: 5px;" />
+</a>    
+<a href="https://linkedin.com/in/guillermo-rodríguez-74b10039" target="_blank">
+<img src=https://img.shields.io/badge/linkedin-%231E77B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white alt="linkedin" style="margin-bottom: 5px;" />
+</a>
+<a href="https://stackoverflow.com/users/109441" target="_blank">
+<img src=https://img.shields.io/badge/stackoverflow-%23F28032.svg?&style=for-the-badge&logo=stackoverflow&logoColor=white alt="stackoverflow" style="margin-bottom: 5px;" />
+</a>  
+
+</div> 
 
 ---
 
