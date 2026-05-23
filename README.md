@@ -17,6 +17,12 @@ Permite explorar personajes, ver detalles y practicar integración con APIs púb
 
 ---
 
+## 🌐 API utilizada
+[Rick and Morty API](https://rickandmortyapi.com)  
+Proporciona información de personajes, ubicaciones y episodios.
+
+---
+
 ## 📦 Instalación
 Clona el repositorio y ejecuta:
 
