@@ -1,3 +1,5 @@
+![HenryLogo](https://firebasestorage.googleapis.com/v0/b/capacitechshop.appspot.com/o/IMAGENES_PRODUCTO%2Fc5b18761efcb43139a53212a70016f19.ico?alt=media&token=532c9081-078f-4839-a8ff-37a5314e2909)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

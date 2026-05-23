@@ -23,6 +23,8 @@ function App() {
       navigate("/home");
       console.log('Entramos...')
     } else {
+      console.log('Datos U:', username);
+      console.log('Datos P:', password);
       alert("Usuario y/o password incorrectos.")
     }
   }

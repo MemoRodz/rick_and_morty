@@ -28,6 +28,7 @@ export default function Form(props) {
 
   function handleSubmit(e) {
     e.preventDefault();
+    console.log("Registro:",userData);
     props.login(userData);
   }
   return (
@@ -44,7 +45,7 @@ export default function Form(props) {
               className={errors.username && styles.warning}
               type="text"
               name="username"
-              placeholder="Introduce tu usuario."
+              placeholder="Introduce tú usuario."
               onChange={(e) => handleInputChange(e)}
             ></input>
             <p className={styles.danger}>{errors.username}</p>
