@@ -20,6 +20,7 @@ Permite explorar personajes, ver detalles y practicar integración con APIs púb
 ## 👨‍💻 Autor
 Guillermo Rodríguez  
 Full Stack Developer | Especialista en .NET, SQL Server, Node.Js y React
+
 📫 [LinkedIn](https://linkedin.com/in/guillermo-rodríguez-74b10039) | [GitHub](https://github.com/memorodz)
 
 ---
@@ -39,5 +40,5 @@ npm start
 ```
 ---
 
-📜 Licencia
+## 📜 Licencia
 Este proyecto está bajo la licencia MIT.
